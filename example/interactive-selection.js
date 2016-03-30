@@ -7,10 +7,16 @@ module.exports = React.createClass({
             value: ''
         };
     },
+    getInitialState: function(){
+       return {
+           value: this.props.value
+       }
+    },
+    
     render: function() {
         return input({
             className: 'json-inspector__selection',
-            value: this.props.value,
+            value: this.state.value,
             size: Math.max(1, this.props.value.length),
             spellCheck: false,
             onClick: this.onClick,
@@ -18,8 +24,15 @@ module.exports = React.createClass({
             onChange: this.onChange
         });
     },
-    onChange: function() {},
+    onChange: function(event) {
+        var value = event.target.value;
+        this.setState({
+            value: value
+        });
+        console.log('change:', value);
+    },
     onClick: function(e) {
+        console.log('onClick');
         e.stopPropagation();
     },
     onFocus: function(e) {
