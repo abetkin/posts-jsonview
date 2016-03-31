@@ -6,13 +6,19 @@ var inspector = createFactory(Inspector);
 var InteractiveSelection = require('./interactive-selection');
 var interactiveSelection = createFactory(InteractiveSelection);
 
-var data = require('./data.json');
+var data = require('./database');
 
 document.addEventListener('DOMContentLoaded', function() {
+    
+    var onClick = (data) => {
+        console.log('inspector click', data);
+    }
+    
     render(
         inspector({
             data: data,
-            onClick: console.log.bind(console),
+            onClick: onClick,
+            // onClick: console.log.bind(console),
             interactiveLabel: interactiveSelection
         }),
         document.getElementById('inspector')

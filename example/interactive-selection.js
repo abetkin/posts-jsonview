@@ -33,7 +33,7 @@ module.exports = React.createClass({
     },
     onClick: function(e) {
         console.log('onClick');
-        e.stopPropagation();
+        // e.stopPropagation();
     },
     onFocus: function(e) {
         e.target.select();

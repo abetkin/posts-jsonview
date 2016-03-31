@@ -1,0 +1,16 @@
+TODO
+
+isPrimitive X
+leaf (post):
+    id
+    text
+    tags
+    comments [<ids>]
+    <stuff>
+    "Add comment" button
+        text
+        tags
+    "Edit" button
+    
+    
+isExpanded: no logic (flag)
